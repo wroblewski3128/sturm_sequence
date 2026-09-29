@@ -1,0 +1,14 @@
+[project]
+name = "sturm-sequence"
+version = "0.1.0"
+description = "Counts and isolates real roots of a polynomial with rational coefficients using Sturm's theorem."
+requires-python = ">=3.10"
+dependencies = []
+readme = "README.md"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
