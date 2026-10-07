@@ -38,3 +38,10 @@ Numerical root-finders (Newton's method, companion-matrix eigenvalues) give appr
 - `sturm_sequence(poly)` — returns the canonical Sturm sequence as a list of `Polynomial`.
 - `count_real_roots(poly, a=None, b=None)` — number of distinct real roots in `[a, b)`. `None` means ±∞.
 - `isolate_real_roots(poly, a=None, b=None)` — list of disjoint open `(lo, hi)` intervals, each containing exactly one distinct real root. Endpoints are `fractions.Fraction`.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
